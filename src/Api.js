@@ -3,11 +3,13 @@ import axios from "axios";
 const API_URL = "http://localhost:5000/api/jobs"; // Backend URL
 
 export const fetchExternalJobs = async (queryParams = "") => {
+  const API_URL = import.meta.env.VITE_API_URL; // Garantindo que está pegando a URL correta
+  console.log(`🔍 Fetching jobs from: ${API_URL}/api/jobs/external?${queryParams}`);
+
   try {
-    console.log(`🔍 Fetching jobs from API with params: ${queryParams}`);
-    const response = await fetch(`http://localhost:5000/api/jobs/external?${queryParams}`);
+    const response = await fetch(`${API_URL}/api/jobs/external?${queryParams}`);
     const data = await response.json();
-    console.log("🔄 API Response from Backend:", data); // Verificar resposta
+    console.log("🔄 API Response from Backend:", data);
     return data;
   } catch (error) {
     console.error("❌ Error fetching jobs:", error);
