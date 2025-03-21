@@ -23,7 +23,7 @@
 
 ### **Backend:**  
 - **Node.js + Express.js**  
-- **PostgreSQL** (Database)  
+- **MongoDB** (Database)  
 - **JWT Authentication**  
 - **Bcrypt** (Password encryption)  
 
